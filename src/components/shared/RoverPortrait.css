@@ -1,0 +1,41 @@
+.rover-portrait {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.rover-portrait img {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 6px);
+  background: var(--surface-2);
+  flex-shrink: 0;
+}
+
+.rover-portrait__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rover-portrait__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.rover-portrait__caption {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.rover-portrait__credit {
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}

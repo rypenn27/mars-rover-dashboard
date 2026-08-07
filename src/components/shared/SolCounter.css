@@ -1,0 +1,11 @@
+.sol-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.sol-counter__value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}

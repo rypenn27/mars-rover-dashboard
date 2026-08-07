@@ -1,0 +1,102 @@
+.latest {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 32px 0 64px;
+}
+
+.latest__overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  gap: 24px;
+}
+
+.latest__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 800px) {
+  .latest__overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+.latest__hero-figure,
+.latest__hero-skeleton,
+.latest__hero-error {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.latest__hero-figure img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+
+.latest__hero-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.latest__hero-skeleton {
+  height: 420px;
+}
+
+.latest__hero-error {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--text-faint);
+  background: var(--surface);
+  text-align: center;
+}
+
+.latest__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.latest__sidebar h2 {
+  font-size: 1.6rem;
+}
+
+.latest__mission {
+  margin-bottom: 4px;
+}
+
+.latest__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.latest__stats .stat-tile:last-child {
+  grid-column: 1 / -1;
+}
+
+.latest__gallery h3 {
+  margin-bottom: 16px;
+}
+
+.latest__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.latest__grid-skeleton {
+  aspect-ratio: 4 / 3;
+}

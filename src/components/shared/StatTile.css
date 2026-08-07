@@ -1,0 +1,15 @@
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.stat-tile__value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
