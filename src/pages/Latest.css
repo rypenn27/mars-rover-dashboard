@@ -100,3 +100,22 @@
 .latest__grid-skeleton {
   aspect-ratio: 4 / 3;
 }
+
+/* Phones: two photos per row, with the camera name under the sol. */
+@media (max-width: 600px) {
+  .latest__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .latest__grid .photo-card figcaption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 8px 10px;
+  }
+
+  .latest__grid .photo-card__camera {
+    max-width: 100%;
+  }
+}

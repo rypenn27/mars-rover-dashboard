@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 32px 0 24px;
+  padding: 32px 0 20px;
 }
 
 .app__title h1 {
@@ -12,10 +12,33 @@
   margin-top: 4px;
 }
 
+/* Tabs and rover toggle, pinned to the top of the screen. */
+.app__controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.app__controls-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 8px;
+}
+
+.app__controls .rover-toggle {
+  margin-bottom: 8px;
+}
+
 .app__tabs {
   display: flex;
   gap: 4px;
-  border-bottom: 1px solid var(--line);
 }
 
 .app__tab {
@@ -37,4 +60,24 @@
 .app__tab.is-active {
   color: var(--text);
   border-bottom-color: var(--rust);
+}
+
+/* Phones: rover toggle on its own row above the tabs, kept compact. */
+@media (max-width: 600px) {
+  .app__header {
+    padding: 24px 0 16px;
+  }
+
+  .app__controls-inner {
+    gap: 4px;
+  }
+
+  .app__controls .rover-toggle {
+    order: -1;
+    margin-bottom: 0;
+  }
+
+  .app__tab {
+    padding: 8px 14px;
+  }
 }

@@ -15,23 +15,28 @@ export default function App() {
           <span className="eyebrow">Mission Control</span>
           <h1>Mars Rover Dashboard</h1>
         </div>
-        <RoverToggle selected={roverId} onSelect={setRoverId} />
       </header>
 
-      <nav className="app__tabs wrap">
-        <button
-          className={`app__tab${view === 'latest' ? ' is-active' : ''}`}
-          onClick={() => setView('latest')}
-        >
-          Latest
-        </button>
-        <button
-          className={`app__tab${view === 'history' ? ' is-active' : ''}`}
-          onClick={() => setView('history')}
-        >
-          History
-        </button>
-      </nav>
+      {/* Stays pinned to the top while scrolling, so the rover can be switched from anywhere. */}
+      <div className="app__controls">
+        <div className="app__controls-inner wrap">
+          <nav className="app__tabs">
+            <button
+              className={`app__tab${view === 'latest' ? ' is-active' : ''}`}
+              onClick={() => setView('latest')}
+            >
+              Latest
+            </button>
+            <button
+              className={`app__tab${view === 'history' ? ' is-active' : ''}`}
+              onClick={() => setView('history')}
+            >
+              History
+            </button>
+          </nav>
+          <RoverToggle selected={roverId} onSelect={setRoverId} />
+        </div>
+      </div>
 
       <main className="wrap">
         {view === 'latest' ? <Latest roverId={roverId} /> : <History />}
