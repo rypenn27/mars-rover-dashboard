@@ -12,7 +12,7 @@ import './Latest.css';
 
 export function Latest({ roverId }) {
   const rover = ROVERS[roverId];
-  const { status: photosStatus, photos, error: photosError } = useLatestPhotos(roverId, 12);
+  const { status: photosStatus, photos, error: photosError, refreshing } = useLatestPhotos(roverId, 12);
   const { status: statsStatus, stats } = useRoverStats(roverId);
 
   // Defaults to the newest photo; clicking a thumbnail below promotes it here.
@@ -71,7 +71,14 @@ export function Latest({ roverId }) {
       </section>
 
       <section className="latest__gallery">
-        <h3 className="eyebrow">Recent Downlinks</h3>
+        <div className="latest__gallery-head">
+          <h3 className="eyebrow">Recent Downlinks</h3>
+          {refreshing && (
+            <span className="latest__updating eyebrow" role="status">
+              <span className="latest__updating-dot" /> Checking NASA for new photos
+            </span>
+          )}
+        </div>
         {photosStatus === 'ready' && (
           <div className="latest__grid">
             {rest.map((photo) => (

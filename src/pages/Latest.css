@@ -87,8 +87,34 @@
   grid-column: 1 / -1;
 }
 
-.latest__gallery h3 {
+.latest__gallery-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
   margin-bottom: 16px;
+}
+
+/* Shown while saved photos are on screen and NASA's newest list is loading. */
+.latest__updating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.latest__updating-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.25; }
 }
 
 .latest__grid {
